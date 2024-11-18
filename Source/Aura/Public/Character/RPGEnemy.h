@@ -16,5 +16,8 @@ class AURA_API ARPGEnemy : public ARPGCharacter, public IEnemyInterface
 	GENERATED_BODY()
 public:
 	virtual void HighlightActor() override;
-	virtual void UnHiglightActor() override;
+	virtual void UnHighlightActor() override;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool bHighlighted = false;
 };

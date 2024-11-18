@@ -5,10 +5,10 @@
 
 void ARPGEnemy::HighlightActor()
 {
-	
+	bHighlighted = true;
 }
 
-void ARPGEnemy::UnHiglightActor()
+void ARPGEnemy::UnHighlightActor()
 {
-	
+	bHighlighted = false;
 }

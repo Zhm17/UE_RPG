@@ -9,6 +9,7 @@
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
+class IEnemyInterface;
 
 /**
  * 
@@ -20,6 +21,7 @@ class AURA_API ARPGPlayerController : public APlayerController
 
 	public:
 		ARPGPlayerController();
+		virtual void PlayerTick(float DeltaTime) override;
 
 	protected:
 		virtual void BeginPlay() override;
@@ -33,5 +35,11 @@ class AURA_API ARPGPlayerController : public APlayerController
 		TObjectPtr<UInputAction> MoveAction;
 
 		void Move(const FInputActionValue& InputActionValue);
-	
+
+		void CursorTrace();
+
+		TScriptInterface<IEnemyInterface> LastActor;
+		TScriptInterface<IEnemyInterface> ThisActor;
 };
+
+
