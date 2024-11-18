@@ -4,14 +4,17 @@
 
 #include "CoreMinimal.h"
 #include "Character/RPGCharacter.h"
+#include "Interaction/EnemyInterface.h"
 #include "RPGEnemy.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class AURA_API ARPGEnemy : public ARPGCharacter
+class AURA_API ARPGEnemy : public ARPGCharacter, public IEnemyInterface
 {
 	GENERATED_BODY()
-	
+public:
+	virtual void HighlightActor() override;
+	virtual void UnHiglightActor() override;
 };
