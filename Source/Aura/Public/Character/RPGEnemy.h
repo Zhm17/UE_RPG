@@ -14,10 +14,11 @@ UCLASS()
 class AURA_API ARPGEnemy : public ARPGCharacter, public IEnemyInterface
 {
 	GENERATED_BODY()
+
+	
 public:
+	ARPGEnemy();
 	virtual void HighlightActor() override;
 	virtual void UnHighlightActor() override;
 
-	UPROPERTY(BlueprintReadOnly)
-	bool bHighlighted = false;
 };
