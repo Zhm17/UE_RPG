@@ -3,11 +3,19 @@
 
 #include "Character/RPGEnemy.h"
 
+#include "AbilitySystem/RPGAbilitySystemComponent.h"
+#include "AbilitySystem/RPGAttributeSet.h"
 #include "Aura/Aura.h"
 
 ARPGEnemy::ARPGEnemy()
 {
 	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility, ECR_Block);
+
+	AbilitySystemComponent = CreateDefaultSubobject<URPGAbilitySystemComponent>("AbilitySystemComponent");
+	AbilitySystemComponent->SetIsReplicated(true);
+
+	AttributeSet = CreateDefaultSubobject<URPGAttributeSet>("AttributeSet");
+	
 }
 
 void ARPGEnemy::HighlightActor()
